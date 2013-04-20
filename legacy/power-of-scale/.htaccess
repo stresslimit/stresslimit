@@ -1,0 +1,3 @@
+RewriteEngine off
+RemoveType css
+RemoveType js

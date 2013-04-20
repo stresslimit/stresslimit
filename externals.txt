@@ -1,0 +1,10 @@
+
+ajax-thumbnail-rebuild http://plugins.svn.wordpress.org/ajax-thumbnail-rebuild/trunk/
+co-authors-plus http://plugins.svn.wordpress.org/co-authors-plus/trunk/
+cms-tree-page-view http://plugins.svn.wordpress.org/cms-tree-page-view/trunk/
+custom-metadata http://plugins.svn.wordpress.org/custom-metadata/trunk/
+editorial-calendar http://plugins.svn.wordpress.org/editorial-calendar/trunk/
+simple-page-ordering http://plugins.svn.wordpress.org/simple-page-ordering/trunk/
+sld-custom-content-and-taxonomies http://plugins.svn.wordpress.org/sld-custom-content-and-taxonomies/trunk/
+wp-missed-schedule http://plugins.svn.wordpress.org/wp-missed-schedule/trunk/
+wp-to-twitter http://plugins.svn.wordpress.org/wp-to-twitter/trunk/
