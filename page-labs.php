@@ -23,7 +23,7 @@ $p = sld_groupby_category( $args );
 
 $first = true;
 
-foreach ( $p as $post ) : setup_postdata(); setup_postmeta_all(); $i++;
+foreach ( $p as $post ) : setup_postdata($post); setup_postmeta_all(); $i++;
 
 	if ( sld_groupby_category_changed( $post ) ) :
 		if ( !$first ) { ?>
