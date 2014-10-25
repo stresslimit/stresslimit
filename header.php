@@ -20,7 +20,7 @@ Y88b  d88P    888     888  T88b  888       Y88b  d88P Y88b  d88P 888        888 
 
 <script type="text/javascript" src="http://use.typekit.com/rgd0rca.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-<script type="text/javascript" src="http://fast.fonts.com/jsapi/9a23a401-e757-435b-9eaf-8aba56078ece.js"></script>
+<script type="text/javascript" src="http://fast.fonts.net/jsapi/9a23a401-e757-435b-9eaf-8aba56078ece.js"></script>
 
 <?php wp_head() ?>
 
