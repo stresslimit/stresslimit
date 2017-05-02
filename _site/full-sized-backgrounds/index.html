@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Full Sized Backgrounds | Stresslimit Design</title>
+<meta name="description" content="" />
+<link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+  <header>
+		
+<div id="menu" class="clearfix no-transition fixed">
+  <div class="container">
+    <a id="logo" href="/" title="Stresslimit Website Design, Montreal" class="chipped"></a>
+    <nav><ul><li><a>R.I.P. 2003-2013</a></li></ul></nav>
+  </div>
+</div>
+
+  </header>
+
+	<div id="main" class="container container--narrow">
+
+
+
+<section class="page-header" id="blog">
+  <h2><span>Blog</span></h2>
+  <h4 class="tagline">We love to share so here's some stuff of ours.</h4>
+
+  <hr class="stripe" />
+
+</section>
+
+
+<article class="single-post">
+  <h1>Full Sized Backgrounds</h1>
+  <h6>April 13, 2012 • by wes</h6>
+
+  
+  <p><img src="/assets/uploads/2012/04/resize.png"></p>
+  
+
+  <p>I was recently tasked to implement a site where the <a href="http://naisgood.com">home page</a> had  a <em>series</em> of rotating full-screen backgrounds. The quintessential example that immediately sprang to mind was the <a href="http://ringvemedia.com">GoToChina</a> site, while <a href="http://css-tricks.com/perfect-full-page-background-image/">Chris Coyer</a> has a series of techniques he’s rounded up, too. However, these utilize only a single image.</p>
+
+<p>Here’s the markup I used:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;div id="bg"&gt;
+	&lt;article id="slide-1" style="background-image: url('space1.jpg');"&gt;
+		&lt;!-- other fun content here --&gt;
+	&lt;/article&gt;
+
+	&lt;article id="slide-2" style="background-image: url('space2.jpg');"&gt;
+		&lt;!-- other fun content here --&gt;
+	&lt;/article&gt;
+
+	&lt;!-- etc... --&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+
+<p>Here, the background images are assigned with an inlined style. I’m only doing this because each image is dynamically pulled from a database and assigned at page load. You could also assign it in the css using the article’s <em>id</em> if you wished.</p>
+
+<p>With CSS3, getting the background-image of the &lt;article&gt; element to center and scale is straightforward. The image even keeps it’s aspect ratio:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#bg {
+	position:fixed;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	z-index:-1;
+	min-width:768px;
+	overflow:hidden;
+}
+
+#bg article {
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	position:absolute;
+	background: no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+</code></pre>
+</div>
+
+<p>Neat. What this does, then is makes sure that the image always covers the background, while keeping it centered. The magic that allows this to happen is within: <em>background-size: cover;</em></p>
+
+<p>The slides are now all sitting on top of each other, and they may be rotated through using fades or side-scrolls, or any other techniques you wish via a little javascript.</p>
+
+<p>Sadly, and not-altogether-unexpectedly, this doesn’t work in IE prior to version 9. There is a nice workaround using a bit of jQuery:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>if ( $.browser.msie ) {
+  $('#bg article').each(function() {
+    var pattern = /url\(|\)|"|'/g;
+    var src = $(this).css('background-image').replace(pattern,"");
+    var id = $(this).attr('id');
+    $('head').append("&lt;style&gt;#slide"+ id +"{progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+src+"', sizingMethod='scale'); -ms-filter: 'progid:DXImageTransform.Microsoft.AlphaImageLoader(src=' "+ src +"', sizingMethod='scale')';}&lt;/style&gt;");
+  });
+}
+</code></pre>
+</div>
+
+<p>This will rip the image src’s out of the background-attribute, and use them in an IE-only filter The nice thing about this approach is it’s simplicity. No extraneous markup or extras, and it performs well.</p>
+
+
+</article>
+
+
+    	</div>
+
+    	<footer>
+
+    		<div class="container">
+
+    			<div class="half">
+    				<a class="twitter" href="https://twitter.com/stresslimit">Hey! Follow us on Twitter</a>
+    			</div>
+
+    			<div class="half">
+    				<a class="fb" href="https://facebook.com/stresslimit">Keep in touch on Facebook</a>
+    			</div>
+
+    		</div>
+
+    	</footer>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-321819-3']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>One Practical Use of CSS3's nth child | Stresslimit Design</title>
+<meta name="description" content="" />
+<link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+  <header>
+		
+<div id="menu" class="clearfix no-transition fixed">
+  <div class="container">
+    <a id="logo" href="/" title="Stresslimit Website Design, Montreal" class="chipped"></a>
+    <nav><ul><li><a>R.I.P. 2003-2013</a></li></ul></nav>
+  </div>
+</div>
+
+  </header>
+
+	<div id="main" class="container container--narrow">
+
+
+
+<section class="page-header" id="blog">
+  <h2><span>Blog</span></h2>
+  <h4 class="tagline">We love to share so here's some stuff of ours.</h4>
+
+  <hr class="stripe" />
+
+</section>
+
+
+<article class="single-post">
+  <h1>One Practical Use of CSS3's nth child</h1>
+  <h6>February 19, 2012 • by wes</h6>
+
+  
+  <p><img src="/assets/uploads/2012/02/nth-child.jpg"></p>
+  
+
+  <p>The dilemma… one of our designers recently presented me with this:</p>
+
+<p><a href="/assets/uploads/2011/03/download.png"><img src="/assets/uploads/2011/03/download.png" alt="" /></a></p>
+
+<p>It represents one row in a list of filtered items, or three &lt;li&gt;s to be precise. Depending on how many items are returned, there could be <em>one</em>, <em>two</em> or <em>three</em> in the last row.</p>
+
+<p>Look closely.</p>
+
+<p><img src="/assets/uploads/2012/02/whyyyy.jpg" alt="" />See the shadow <em>between</em> each item? See how it spills over onto neighbouring items? If there is a neighbouring element to the right, it casts a shadow on to the element to the left, while the last item in the row has no shadow. Also, the paper background is subtlety different for each slot in the row. Yeah, it all looks great, but how is this going to work in practice? Couldn’t each &lt;li&gt; just have the same background – with the shadow – and uh, we’ll hope it won’t be too weird for the last element in the row? A mere CSS apprentice would probably cave and go this route.<!-- more --></p>
+
+<p>Here’s a neat trick. Rather than slicing up the image and trying to finagle each slice onto the first, second or third element in the row by appending different classes to every &lt;li&gt;, we do the following:</p>
+
+<ol>
+  <li>
+    <p>First, we remove the shadows between items from the image (thankfully, this entails simply deactivating a layer in Photoshop)</p>
+  </li>
+  <li>
+    <p>We also leave the image whole, in its entirety. <em>No</em> slicing. This in itself is quick and easy.</p>
+  </li>
+  <li>
+    <p>We take this image and assign it as the background to <em>every</em> &lt;li&gt;.</p>
+  </li>
+  <li>
+    <p>We offset it in each item using the handy <em>nth-child</em> selector. (What, not supported in IE? No problem, we’ll come to that.)</p>
+  </li>
+</ol>
+
+<p>First, though, let’s define the html structure we’ll use:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;ul class="paper"&gt;
+  &lt;li&gt;&lt;div&gt;...&lt;/div&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;div&gt;...&lt;/div&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;div&gt;...&lt;/div&gt;&lt;/li&gt;
+  ...
+&lt;/ul&gt;
+</code></pre>
+</div>
+
+<p>And, some general styles for each li, as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ul.paper li {
+  background: url('images/paper-list-items.jpg') no-repeat;
+  float: left;
+  padding: 10px 0;
+  margin: 0 -6px -10px -6px;
+</code></pre>
+</div>
+
+<p>Note that we have negative margins. This is because I want each element to overlap by 12px (margins only collapse vertically, so -6 and -6 will add to -12px, here).  We see that I’ve also set the background image, and have floated each element.</p>
+
+<p>Next, we add the shadow in. We’ll use the child &lt;div&gt; for this purpose – we don’t necessarily want to always see the shadow and want to be able to style it independently, so we don’t use the parent &lt;li&gt; for this. While we’re at it, let’s add some padding and define the dimensions:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ul.paper li div {
+  background: url('images/list-item-shadow.png') 0 0 no-repeat;
+  padding: 30px 30px 20px;
+  width: 200px;
+  height: 180px;
+}
+</code></pre>
+</div>
+
+<p>Okay, so at this point every element looks the same. We haven’t done anything fancy just yet, although the shadow that we just added will appear <em>on top</em> of the element to the left because we’re overlapping each &lt;li&gt; a little bit. Now, using the :nth-child selector, we shall make this look and behave as we’d expect.</p>
+
+<p>Basically, the :nth-child selector allows you to target only certain items in a long list of elements. For example, we could add styles to every 2nd element, every 7th element, only odd elements… or whatever we wanted, really, using the some fancy filtering syntax. In this case, we want specific styles for the first, second and third elements. Because this design has 3 elements per row, we’ll want to target every third &lt;li&gt; accordingly. Part of the syntax for targeting the first, second and third elements of a row “n” looks like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>3n - 2 /* every third element, minus 2 */
+3n - 1 /* every third element, minus 1 */
+3n     /* the 3n means every third element */
+</code></pre>
+</div>
+
+<p>And the complete css would then look like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ul.results li:nth-child(&lt;strong&gt;3n-2&lt;/strong&gt;) { }  /* first in row */
+ul.results li:nth-child(&lt;strong&gt;3n-1&lt;/strong&gt;) { }  /* second in row */
+ul.results li:nth-child(&lt;strong&gt;3n&lt;/strong&gt;)   { }  /* third in row */
+</code></pre>
+</div>
+
+<p>(We don’t actually need to add any styles for the first &lt;li&gt; element in each row (as the default background position is always top / left), but I wrote the filter syntax for completeness).</p>
+
+<p>Let’s now fix the background positioning for each &lt;li&gt;:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ul.results li:nth-child(3n-1) { background-position:50% 0; }
+ul.results li:nth-child(3n) { background-position:right 0; }
+</code></pre>
+</div>
+
+<p>And finally, let’s ‘nix the shadow background on the first element of every row:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ul.results li:nth-child(3n-2) div { background:none; }
+</code></pre>
+</div>
+
+<p>Putting it all together, we use only one big background image and offset it appropriately for each &lt;li&gt;, and we then add a paper-shadow image to only the second and third elements in every row:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ul.results li:nth-child(3n-2) div { background:none; }
+ul.results li:nth-child(3n-1) { background-position:50% 0; }
+ul.results li:nth-child(3n) { background-position:right 0; }
+</code></pre>
+</div>
+
+<p>I also mentioned that this will work with IE. Well, the solution isn’t anything fancy, I’m afraid. Here, I’m just including <a href="http://selectivizr.com/">selectivzr.js</a> to add CSS3 selectors to IE. Now, you can CSS away!</p>
+
+
+</article>
+
+
+    	</div>
+
+    	<footer>
+
+    		<div class="container">
+
+    			<div class="half">
+    				<a class="twitter" href="https://twitter.com/stresslimit">Hey! Follow us on Twitter</a>
+    			</div>
+
+    			<div class="half">
+    				<a class="fb" href="https://facebook.com/stresslimit">Keep in touch on Facebook</a>
+    			</div>
+
+    		</div>
+
+    	</footer>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-321819-3']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+</body>
+</html>
+

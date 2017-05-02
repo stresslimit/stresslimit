@@ -1,0 +1,148 @@
+/*
+Site: STRESSLIMIT EDCAL PLUGIN
+Description: Slick, yet nifty
+Version: 0.1
+Author: StressLimitDesign (http://stresslimitdesign.com)
+
+ / ___|_   _|  _ \| ____/ ___/ ___|| |   |_ _|  \/  |_ _|_   _|
+ \___ \ | | | |_) |  _| \___ \___ \| |    | || |\/| || |  | |  
+  ___) || | |  _ <| |___ ___) |__) | |___ | || |  | || |  | |  
+ |____/ |_| |_| \_\_____|____/____/|_____|___|_|  |_|___| |_|  
+
+*/
+
+
+/*  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	Table of Contents:
+
+		Defaults - HTML5 Boiler Plate
+			Print Style
+			Mobile Browser
+		EdCal Specific Styles
+			Text
+			Kut-corners [for sld style]
+			Structure and Layout
+
+	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/*  --------------------------------------------------------------
+	DEFAULTS - HTML 5 BoilerPlate
+	-------------------------------------------------------------*/
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,
+small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,
+article,aside,figure,footer,header,hgroup,menu,nav,section,menu,
+time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+article,aside,figure,footer,header,hgroup,nav,section{display:block;}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent;}
+body{font:13px sans-serif;*font-size:small;*font:x-small;line-height:1.22;}
+h1,h2,h3,h4,h5,h6{font-weight:bold;text-rendering:optimizeLegibility;}
+html{-webkit-font-smoothing:antialiased;}
+ul{margin-left:15px;}
+ol{margin-left:30px;list-style-type:decimal;}
+strong,th{font-weight:bold;}
+td,td img{vertical-align:top;}
+.ie7 img{-ms-interpolation-mode:bicubic;}
+body,select,input,textarea{color:#444;}
+a:link{-webkit-tap-highlight-color:#e1dfd3;}
+::-moz-selection{background:#e1dfd3;text-shadow:none;}
+::selection{background:#e1dfd3;color:#fff;text-shadow:none;}
+/* 
+* print styles
+*/
+@media print{
+*{background:transparent !important;color:#444 !important;text-shadow:none;}
+a,a:visited{color:#444 !important;text-decoration:underline;}
+a:after{content:" (" attr(href) ")";}
+abbr:after{content:" (" attr(title) ")";}
+.ir a:after{content:"";}
+/* Don't show links for images */
+pre,blockquote{border:1px solid #999;page-break-inside:avoid;}
+img{page-break-inside:avoid;}
+@page{margin:0.5cm;}
+p,h2,h3{orphans:3;widows:3;}
+h2,h3{page-break-after:avoid;}
+}
+@media all and (orientation:portrait){}
+@media all and (orientation:landscape){}
+/* Grade-A Mobile Browsers */
+@media screen and (max-device-width:480px) { html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } }
+
+
+/*  --------------------------------------------------------------
+	EdCal Specific Styles
+	-------------------------------------------------------------*/
+
+/* text */
+
+body { font-family: "minion-pro-1","minion-pro-2"; line-height:1.5em; font-size:16px; }
+h1, h2, h3 { font-weight:normal; font-style:italic; }
+h1, h2 { letter-spacing:0.1em; }
+h1 { font-size:1.7em; margin:12px 0 16px 32px; }
+h2 { font-size:1em; font-style:normal; }
+h3 { font-size:1.1em; }
+p, li {  }
+p { margin-bottom:0.8em; }
+a { color:#f05f08; padding:0 2px; }
+a:hover { text-decoration:none; }
+
+
+/* kut-corners */
+
+/* corner setup */
+.corner { position:absolute; height:0; width:0; line-height:0px; border-style:solid; border-width:21px 7px 0 0; bottom:0px; right:0px; }
+/* top left white */
+#container .topcorner { border-width:0 0 18px 6px; border-color:transparent white; top:0px; left:0px; bottom:auto; right:auto; }
+/* bottom right of both grey boxes - needs pattern */
+#container .main .corner { border-color:transparent #fff; border-width:24px 8px 0 0; }
+/* blue border on white inset */
+.main #pluginbox .corner { border-color:transparent #b3dbe5; }
+/* grey border on blue border - needs pattern */
+.main #pluginbox .corner + .corner { border-color:transparent #ebebeb; right:-8px; bottom:-8px; }
+
+/* bottom box thin border corner */
+#container .main .wrap .corner { border-color:transparent #dad9cc; }
+/* bottom box after thin border - needs pattern */
+#container .main .wrap .corner + .corner { border-color:transparent #ebebeb; right:-2px; bottom:-2px; }
+/* to fix our missing pattern problem */
+.cornerfix { position:absolute; width:7px; height:21px; background:transparent url(../images/bg_dots_crop.png) 1px top no-repeat; bottom:8px; right:8px; }
+.cornerfix.outside { bottom:0px; right:0px; }
+
+/* structure and layout */
+
+#container { position:relative; background:transparent url(../images/bg_dots.png); width:80%; margin:0 auto; padding:27px 40px; top:-28px;}
+#headercontainer { width:100%; background:#b3dbe5; position:relative; top:60px; height:50px; border-top:1px solid #e1dfd3; border-bottom:1px solid #e1dfd3; }
+header { background:transparent url(../images/S_logo.png) no-repeat -5px top; height:75px; }
+header h1 { color:#fff; font-style:normal; margin:0 0 0 41px; line-height:34px; position:relative; top:-5px; background:transparent url(../images/S_logotype.png) no-repeat; text-indent:-9999px; }
+.main { background:rgba(55, 59, 61, 0.1); padding:8px; margin:20px 0; position:relative; }
+#pluginbox { position:relative; background:#fff; padding:24px 22px; border:#b3dbe5 solid 8px; }
+#pluginbox h2 { display:inline-block; margin:0 0 20px 1px; text-transform: uppercase; }
+#pluginbox img { width:100%; }
+#fold { margin:0 3%; position: relative; height: 100%;}
+#fold-left { background: url(../images/orangeleft.png) no-repeat center; opacity: 0.8; height: 100%; width: 39px; position: absolute; top: 0; left: -29px; }
+#fold-right { background: url(../images/orangeright.png) no-repeat center; opacity: 0.8; height: 100%; width: 39px; position: absolute; top: 0; right: -29px; }
+#fold div.promo { text-align:center; color:#fff; font-size:20px; position: relative; background: #f07327; opacity: 000.8; padding: 8px 10px; margin: 0 10px; }
+#fold div a { color:#000; }
+.main .wrap { position:relative; border:2px solid #dad9cc; background:#fff; padding:25px 25px 5px 25px; }
+
+@media screen and (min-width:1200px) { 
+	.columns { column-gap:3em; -moz-column-gap:3em; -webkit-column-gap:3em; column-width: 26em; -moz-column-width:26em; -webkit-column-width:26em; }
+}
+
+
+.main .wrap h1 { margin-left:0; }
+.main .wrap ul { padding-bottom:20px; }
+.main .wrap li { list-style-image: url(../images/li.png); }
+footer { background:#373b3d; padding:17px 40px; color:#fff; text-align:center; width:80%; margin:-27px auto 15px auto; display:block; }
+
+
+
+
+
+
+

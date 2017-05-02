@@ -1,0 +1,14 @@
+{
+  "name": "stresslimitdesign.com",
+  "version": "5.1.0",
+  "description": "",
+  "scripts": {
+    "dev": "yarn run copy-assets && jekyll serve --livereload",
+    "copy-assets": "rm -rf assets && rsync _assets/ assets/ -av",
+    "dist": "yarn run copy-assets && jekyll build",
+    "deploy": "yarn run dist && yarn run sync-production",
+    "sync-production": "firebase deploy"
+  },
+  "author": "@stresslimit",
+  "license": "ISC"
+}

@@ -1,0 +1,196 @@
+/*
+Site: STRESSLIMIT archive 0.1
+Description: Slick, yet nifty - until sept 2011
+Version: 0.1
+Author: StressLimitDesign (http://stresslimitdesign.com)
+
+ / ___|_   _|  _ \| ____/ ___/ ___|| |   |_ _|  \/  |_ _|_   _|
+ \___ \ | | | |_) |  _| \___ \___ \| |    | || |\/| || |  | |  
+  ___) || | |  _ <| |___ ___) |__) | |___ | || |  | || |  | |  
+ |____/ |_| |_| \_\_____|____/____/|_____|___|_|  |_|___| |_|  
+
+*/
+
+
+/*  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	Table of Contents:
+
+		Defaults
+		Basic Layout
+		General Styles
+			text
+			links
+			lists
+			forms
+			tables
+			utility
+		Section-Specific Styles
+			header
+			content
+			footer
+		Print
+
+	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
+/*  --------------------------------------------------------------
+	DEFAULTS
+	-------------------------------------------------------------*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin:0; padding:0; border:0; outline:0; font-weight:inherit; font-style:inherit; font-size:100%;
+	font-family:inherit; vertical-align:baseline;
+}
+ol, ul, li { list-style:none; }
+:focus { outline:0;}
+
+html { height:95%; }
+body { height:95%; background:#e4e2d4 url('images/background.png') center center no-repeat; font-size:16px; line-height:1.6em; color:#32383a; font-family:Georgia, Times, serif; }
+
+/*  --------------------------------------------------------------
+	LAYOUT
+	-------------------------------------------------------------*/
+#shim { height:50%; width:100%; float:left; margin-top:-300px; visibility:hidden; }
+#container { width:800px; height:600px; position:relative;				clear:both; top:0; margin:0 auto; }
+	#header { clear:both; position:relative; width:100%; height:16px; top:0; padding-top:4px; }
+	#content { overflow:hidden; }
+		#messages { position:absolute; top:110px; left:210px; width:592px; }
+
+/*  --------------------------------------------------------------
+	GENERAL STYLES
+	-------------------------------------------------------------*/
+
+/*  ----- Text ----- */
+p { line-height:1.4em; margin:12px 0; }
+p.small { font-size:0.9em; line-height:1.6em; margin-bottom:0.3em; color:#8c8c7b; }
+blockquote { padding:0 1.5em 1.5em; }
+strong, b { font-weight:bold; }
+i, em { font-style:italic; }
+
+h1 { font-size:42px; line-height:1.2em; padding-bottom:34px; }
+h2 { font-size:26px; margin-bottom:2px; font-weight:bold; }
+h3 { font-size:19px; padding:40px 0 32px; }
+h4 { font-size:14px; letter-spacing:1.0px; text-transform:uppercase; }
+h5 { font-size:12px; padding-top:12px; margin-bottom:12px; text-transform:uppercase; }
+h6 { text-decoration:underline; }
+
+/*  ----- Links ----- */
+a, a:link, a:active, a:visited { color:#f05f08; font-style:italic; text-decoration:none; }
+a:hover { text-decoration:underline; }
+
+/*  ----- Lists ----- */
+ul { }
+ol { list-style-type:decimal; margin:0.5em 0 1.2em; }
+li { line-height:1.5em; }
+
+/*  ----- Forms ----- */
+input, select { padding:0.3em; }
+input[type=password], input[type=text] { background-color:#ffffff; border:1px solid #05807b; width:15em; }
+select { background-color:#FFFFFF; border:1px solid #05807B; font-family:"Trebuchet MS"; font-weight:bold; padding:2px 0 0 5px; width:15.8em; }
+
+/*  ----- Tables ----- */
+table { border-collapse:collapse; width:100%; margin:20px 0; }
+td, th { vertical-align:top; }
+
+/*  ----- Utility ----- */
+.textcenter { text-align:center; }
+.underline { text-decoration:underline; }
+.green { color:#87aaaf; }
+.red { color:#9f3100; }
+.left { float:left !important; }
+.right { float:right !important; }
+.large { font-size:48px; }
+.smallcaps { font-size:12px; font-family:Arial, Helvetica, sans-serif; text-transform:uppercase; }
+.nomargin { margin:0 !important; }
+.obfuscate { direction:rtl; unicode-bidi:bidi-override; }
+
+
+/*  --------------------------------------------------------------
+	SECTION SPECIFIC STYLES
+	-------------------------------------------------------------*/
+/*
+		Header
+		Content
+			- pages
+			- appendix
+		Footer
+*/
+
+/* 	 HEADER
+ 	--------------- */
+#contact { font-style:italic; font-size:14px; }
+#contact a { color:#000; text-decoration:none; }
+#contact a:hover { color:#f05f08; }
+#contact li { float:left; margin:0 32px 0 0; }
+#contact li span { color: #f05f08; }
+#stresslimit { position:absolute; top:38px; left:2px; height:120px; width: 346px; background:url("images/logos.png") 0 0 no-repeat; text-indent:-9999em; }
+
+
+/* 	 CONTENT
+ 	--------------- */
+
+#content li { padding:3px 0; line-height:1.4em; }
+#work { position:absolute; bottom:0; left:0; color:#f05f08; height:16px; width:100px; }
+.simplecontent { clear:both; margin:79px 0 0 77px; }
+.simplecontent h1 { /*font-size:22px;*/ padding-bottom:0px; }
+
+
+/* orange blob */
+#orange { background-color:#f05f08; background-color:rgba(255,126,48,0.95);
+	z-index:999; padding:0 2em 2em 2.5em; color:#fff;
+	position:absolute; 
+	width:530px;
+/*	height:1020px;*/
+/* height:auto; min-height:100% */
+	left:30%; top:0;
+}
+#orange, #orange h1, #orange h2, #orange p { font-family:helvetica, arial, sans-serif; font-weight:normal; }
+#orange h1 { margin-top:2em; font-weight:bold; }
+#orange div { padding:0 0 7em 0; }
+#orange p.experience { margin:0; }
+#orange a { color:#fff; background:#ffaf60; font-style:normal; text-decoration:underline; }
+
+
+
+
+body.orange { background-attachment:fixed; background-position:center -120px; }
+body.orange #container { position:fixed; margin:30px auto 0; left:50%; margin-left:-400px; }
+
+
+
+
+
+
+
+.message p { margin:0;  }
+
+div#contact { font-size: 0.9em; letter-spacing: 0.009em; }
+div.message { position: relative; margin: 0 6px 6px 0; padding: 16px 16px 14px; }
+div#message_1 { left: 189px; width: 254px; background: transparent url('images/message_1.png') no-repeat top left; }
+div#message_2 { padding:28px 12px 28px 16px; font-size:1.3em; color: #fff; width: 220px; float: left; background: transparent url('images/trans_black_pixel.png') repeat top left; }
+div#message_3_4 { float: left; margin: 0; padding: 0; }
+div#message_3 { width: 315px; background: transparent url('images/trans_blue_pixel.png') repeat top left; padding: 15px 0 12px 16px; }
+div#message_4 { padding: 5px 14px; width: 150px; background: transparent url('images/message_4.png') no-repeat bottom left; }
+div#message_4 ul { font-size: .850em; width: 140px; }
+
+/* single preview */
+.simplecontent { background-color:#f05f08; /*background-color:rgba(255,126,48,0.95);*/
+	background:url(images/bg_content.png) bottom right no-repeat;
+	z-index:999; padding:20px 25px; margin-bottom: 20px; position:relative;
+	}
+.simplecontent a, .simplecontent a:link, .simplecontent a:active, .simplecontent a:visited { color:#000; background:#fff; }
+.simplecontent a:hover { background:transparent; }
+.simplecontent table { margin: 0; }
+.simplecontent h3 { padding: 0 25px; }
+/*.simplecontent#posts a, .simplecontent#posts a:link, .simplecontent#posts a:active, .simplecontent#posts a:visited { color:#fff; background:transparent; }*/
+
