@@ -1,0 +1,26 @@
+---
+layout: blog
+title: Blog
+permalink: /blog/
+---
+<section class="page-header" id="articles">
+
+  {% for post in site.posts %}
+
+		<article class="stripe-after">
+      {% if post.thumbnail %}
+        <p><img src="/assets/uploads/{{ post.date | date: '%Y/%m' }}/{{ post.thumbnail }}" style="max-width:400px"></p>
+      {% endif %}
+			<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      <h6>{{ post.date | date: '%B %d, %Y' }} • by {{ post.author }}</h6>
+
+      {{ post.excerpt }}
+
+			<a href="{{ post.url }}">Continue Reading</a>
+
+		</article>
+
+  {% endfor %}
+
+
+</section>

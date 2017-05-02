@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Encoding icons in your CSS | Stresslimit Design</title>
+<meta name="description" content="" />
+<link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+  <header>
+		
+<div id="menu" class="clearfix no-transition fixed">
+  <div class="container">
+    <a id="logo" href="/" title="Stresslimit Website Design, Montreal" class="chipped"></a>
+    <nav><ul><li><a>R.I.P. 2003-2013</a></li></ul></nav>
+  </div>
+</div>
+
+  </header>
+
+	<div id="main" class="container container--narrow">
+
+
+
+<section class="page-header" id="blog">
+  <h2><span>Blog</span></h2>
+  <h4 class="tagline">We love to share so here's some stuff of ours.</h4>
+
+  <hr class="stripe" />
+
+</section>
+
+
+<article class="single-post">
+  <h1>Encoding icons in your CSS</h1>
+  <h6>December 09, 2011 • by wes</h6>
+
+  
+
+  <p>Here’s a nifty trick to impress your geek friends at nerd school: encode your icons as base64 data and save them right inside your stylesheet.</p>
+
+<p>Why would you want to do this?</p>
+
+<p>Well, for starters it speeds up your site by minimizing HTTP requests. Much of the end-user response time is spent on downloading a page’s assets; minimize these requests and you can dramatically speed up page load times (see <a href="http://developer.yahoo.com/performance/rules.html">http://developer.yahoo.com/performance/rules.html</a> for a good overview on this).</p>
+
+<p>Also, I like the idea of having icons and simple graphics directly attached to a particular class or id in my stylesheet.</p>
+
+<p>Oh, and also, it’s cool.</p>
+
+<p>So how do we do it? First, we need to actually encode an image as base64 data. The easiest way to do this is to use an online form (<a href="http://www.base64-image.de/">here’s one</a>), but you could also use php:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>function encode_image( $filename=string, $filetype=string ) {
+    if ($filename) {
+        $img = fread(fopen($filename, "r"), filesize($filename));
+        return 'data:image/' . $filetype . ';base64,' . base64_encode($img);
+    }
+}
+</code></pre>
+</div>
+
+<p>You’ll note that at the beginning of the string you get back, you have: <em>data:{mime-type};base64.</em>  This mime-type tells the parser how to deal with the data, and will usually be one of: <em>image/gif</em>, <em>image/jpg</em>, or  <em>image/png</em>. Using this base64-encoded string, we can now do all sorts of wacky stuff, like:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>background:url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAMCAYAAAC0qUeeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAYxJREFUeNp0kM9LwmAYx59tbk5QgqA6iDJYUAcP4RakXoKOsVPd9Cie8tI/4D+Rp8A/wEtEBM6LSB0EPXVqGjoZsTzoGNbU6bDnFRQJemDs+fF93/fzfShFUWArjlzXVWaz2TEp/H7/O8dxT5hqpPYtl0ugKIrkZyi8EQRhR5bl1clWq3Wg6/oJHrjDssnEYjHwPG9/PB7fxuPxvUKhAKlUCjCHZDIJnU6HN03zkKbpH6ZWq+1GIhHZtu2LXC4H0Wh0wxQIBCAcDkO9Xg9NJhOOQgwB++f4XW0hbQL5IZPJwHA4/KIHg4FdqVQ+8/k8tNtt+Bu9Xg8WiwUwDGMw3W532mg0HMMwTi3LCiUSCWBZdiV0HAeKxSLgzESTKiOKInn6GwsLnUtolpUkaSUulUpQrVYdXOE9al58a0b8v/I8L6qqet3v94Hwa5oG2HsmM6Kht/lwPW+4Qshms5BOp2E0GpFecz33/fEzJbx4O8znc3KrRxbyn/gDXT+Uy+VLfNoNBoOPiKOvh78CDADFaaRpj7fVSAAAAABJRU5ErkJggg==) 0 50% no-repeat;
+</code></pre>
+</div>
+
+<p>Instead of linking to an external image, <em>we put it right in the css</em>. For example, that particular bit of css will put a lightbulb into the background of an element, as seen here: <img src="/assets/uploads/2011/04/lightbulb.png" alt="" /></p>
+
+<p>If you used the php snippet above <em>and</em> <a href="http://css-tricks.com/css-variables-with-php/">you’re serving your css with php</a>, you could save the step of having to paste in the base64 string, and instead encode it directly like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>background: url("&lt;?php echo encode_image ('lightbulb.png','png'); ?&gt;") no-repeat;
+</code></pre>
+</div>
+
+<p>Neat! Cool! Blammo! So, there you go. Yes, you could go: background:url(‘image/boring.gif’); but, why? This little trick will speed up your site by reducing HTTP requests, and make your server happy.</p>
+
+
+</article>
+
+
+    	</div>
+
+    	<footer>
+
+    		<div class="container">
+
+    			<div class="half">
+    				<a class="twitter" href="https://twitter.com/stresslimit">Hey! Follow us on Twitter</a>
+    			</div>
+
+    			<div class="half">
+    				<a class="fb" href="https://facebook.com/stresslimit">Keep in touch on Facebook</a>
+    			</div>
+
+    		</div>
+
+    	</footer>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-321819-3']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+</body>
+</html>
+

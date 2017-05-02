@@ -1,0 +1,47 @@
+---
+author: colin
+comments: true
+date: 2011-10-12 15:54:27+00:00
+layout: post
+link: http://stresslimitdesign.com/about-us
+slug: about-us
+title: About Us
+wordpress_id: 653
+author:
+- colin
+categories:
+- About
+---
+
+## The last 10 years
+
+
+We've made so many amazing things over the past 10 years! I love to think back with pride at some of our first projects as stresslimitdesign in the early 2000's — [interactive training software for postpartum moms](http://mothersacrossamerica.com/), a European chamber orchestra, lots of other small businesses [robotics parts manufacturer, process improvement consultants, electric supply company, etc]. For this era we had this [placeholder site](http://stresslimitdesign.com/previously/stresslimitdesign-v1).
+
+Technical highlights include pre-AJAX XMLHTTPRequest using iframes, pre-javascript framework library [yes I mean before prototype.js existed], pre-WordPress blogging platform, all home-engineered. I love the advances in open source since then, it means so much less engineering by us, and more engineering by tons of people everywhere.
+
+<!-- more -->
+
+After a few years, 2 trends emerged in our successes: that our overly-attentive service and the far-reaching scope of our skills gave us better results in ventures where we worked at the very core of clients' business models; and that those results worked best in 2 specific domains—thought leaders [authors and consultants who needed a high profile in their industry; eg. [David Maister](http://davidmaister.com/), [Julien Smith](http://juliensmith.com/), [Chris Brogan](http://www.chrisbrogan.com/work-with-me/), among others] and startups [especially those in the early stages of development; eg. [Start Cooking](http://startcooking.com)]. We also got a new [one-page interim site](http://stresslimitdesign.com/previously/stresslimitdesign-v2) which highlighted our continued video work.
+
+Since then we have worked for big names [an internal blogging project for Microsoft, an [interactive html5 infographic](http://fedex.stresslimitdesign.com/) for a FedEx blog] and lesser-known or emerging ones [too numerous to name]. We have also jumped deep into the open source word of WordPress as it has evolved, [collaborating](http://www.zackgrossbart.com/blog/about-zack/) on several [popular WordPress plugins](http://stresslimitdesign.com/about-our-wordpress-expertise#plugins) [one of which has been chosen on the shortlist of WordPress.com VIP plugins]. The divergence in activity led us to reduce our "coming soon" page to a [pretty minimal one](http://stresslimitdesign.com/previously/stresslimitdesign-v3), then one only [slightly more elaborate](http://stresslimitdesign.com/previously/stresslimitdesign-v4).
+
+All this and we never had a "real" website.
+
+
+## The last 10 weeks
+
+
+Reading our past few posts we've obviously been "going through changes". But that hasn't stopped us from continuing to do amazing work for amazing folks. After helping [TechCrunch with their recent relaunch](http://techcrunch.com/2011/07/08/heads-up-techcrunch-will-look-a-little-different-next-week/), we have been consulting with the [WordPress.com VIP Services](http://vip.wordpress.com/) team at [Automattic](http://automattic.com) to reposition their service offerings.
+
+We've also taken on a brand launch strategy and build for local [Good Marketing team N/A Creative](http://goodmrktng.com), and are finishing up a WordPress plugin for an online social media services product with lots of clients in the WordPress.com VIP program [will announce the name when it launches].
+
+
+## The next 10 months
+
+
+Bigger is not better. We need to stay small to stay awesome. We will be continuing to focus on one realm which has become our forté which is high-level WordPress technical implementation, but also leaving room to [focus on everything](http://joi.ito.com/weblog/2010/05/13/focusing-on-eve.html).
+
+Re-shaping our process to be highly based on ultra-organized project management, working with the group of experts in our extended family.
+
+Collaborating with interesting people and organizations pushing the envelope where good design thinking meets technology and social innovation.

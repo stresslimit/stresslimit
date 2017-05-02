@@ -1,0 +1,25 @@
+{% include header.html %}
+
+
+<section class="page-header" id="blog">
+  <h2><span>Blog</span></h2>
+  <h4 class="tagline">We love to share so here's some stuff of ours.</h4>
+
+  <hr class="stripe" />
+
+</section>
+
+
+<article class="single-post">
+  <h1>{{ page.title }}</h1>
+  <h6>{{ page.date | date: '%B %d, %Y' }} • by {{ page.author }}</h6>
+
+  {% if page.thumbnail %}
+  <p><img src="/assets/uploads/{{ page.date | date: '%Y/%m' }}/{{ page.thumbnail }}"></p>
+  {% endif %}
+
+  {{ content }}
+
+</article>
+
+{% include footer.html %}

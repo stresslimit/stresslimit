@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>stresslimitdesign</title>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	<style type="text/css" media="screen">@import "/assets/legacy/v2/sldsite.css";</style>
+	<script src="/assets/legacy/v2/qtobject.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	//<![CDATA[
+		function selectVideo(v,holder) {
+			document.getElementById('latestVideo').innerHTML='<a href="'+v+'" onclick="insertVideo(\''+v+'\'); return false;"><img src="/assets/legacy/v2/images/'+holder+'.jpg" alt="" /></a>';
+		}
+		function insertVideo(v) {
+			//myQTObject = new QTObject("http://media.startcooking.com/video/640mp4/GuyKawasakisFamousTeriyakiSauce.mp4", "whatever", "640", "376");
+			myQTObject = new QTObject(v, "whatever", "640", "376");
+			myQTObject.addParam("controller", "true");
+			myQTObject.write('latestVideo');
+			document.getElementById('latestVideo').onclick=null;
+			return false;
+		}
+	//]]>
+	</script>
+</head>
+
+<body>
+
+<div id="contain">
+
+<div class="content">
+
+		<h1 class="sld">stresslimitdesign</h1>
+
+		<div class="lacarte clearfix">
+			<a href="#capabilities">capabilities</a>
+			<a href="#capabilities">clients</a>
+			<a href="#contact">contact</a>
+		</div>
+
+
+
+	<div class="featureOuter">
+	<div class="feature">
+
+		<h2 id="video">Our most recent video:</h2>
+
+<?
+//$video = 'http://media.startcooking.com/video/640mp4/GuyKawasakisFamousTeriyakiSauce.mp4';
+//$video = 'http://media.startcooking.com/video/640mp4/AppleSnackAttack.mp4';
+$video = $base_url.'images/edf/ThePowerofScale.mp4';
+?>
+		<div id="latestVideo">
+			<a href="<?=$video?>" onclick="insertVideo('<?=$video?>'); return false;"><img src="/assets/legacy/v2/images/edf/powerofscale_holder.jpg" alt="" /></a>
+		</div>
+
+		<p class="smallP">video promoting the "greenfleeting" campaign of the Environmental Defense Fund to get companies to take small but effective changes to their fleet vehicles
+<?//		<br/><a href="http://media.startcooking.com/video/640mp4/GuyKawasakisFamousTeriyakiSauce.mp4" onclick="selectVideo('http://media.startcooking.com/video/640mp4/GuyKawasakisFamousTeriyakiSauce.mp4','guyholder'); this.style.display='none'; return false;">&gt;&gt; see another video</a>?>
+		</p>
+
+	</div>
+	</div>
+
+
+
+	<h2 id="stories">We don't build website, we build success stories.</h2>
+
+	<div class="section">
+
+		<p>Since our beginning in 2003, stresslimitdesign has been dedicated to helping a series of <a href="#capabilities">prominent clients</a> explore the power and potential of social and mutli-media marketing. Our work includes developing the <a href="http://startcooking.com" target="_blank">award-winning top independent cooking videos on the net</a>; we&rsquo;ve produced and cultivated <a href="http://www.huffingtonpost.com/charles-h-green" target="_blank">important voices</a> in the <a href="http://trustedadvisor.com" target="_blank">business blogosphere</a>; developed branding and social media platforms for <a href="http://duncanbucknell.com" target="_blank">authoritative commentary in important fields</a> with <a href="http://coeurope.org" target="_blank">truly global reach</a>. We&rsquo;ve helped clients <a href="http://dstoutput.com" target="_blank">rethink how they communicate</a>;  helped them develop <a href="http://davidmaister.com" target="_blank">influential subscriber bases through mailing lists, podcasts and videocasting</a>; helped bestselling business authors take control of <a href="http://davidmaister.com/books.strategyFatSmoker/" target="_blank">publishing and promoting their own books</a>; helped them create <a href="http://trustedadvisor.com/trustQuotient/sld" target="_blank">really cool psychometric tools</a> that measure trust for web visitors and (in an even cooler way) for the staff of fortune 100 companies. Our clients have made the <a href="http://www.nytimes.com/2008/04/13/books/bestseller/0413besthardnonfiction.html" target="_blank">New York Times Bestseller List</a>, have been honored by the <a href="http://www.webbyawards.com/webbys/current_honorees.php?media_id=96&category_id=27&season=12" target="_blank">Webby</a> and Grammy awards, and have seen <a href="http://del.icio.us/startcooking" target="_blank">accolades and articles in the mainstream press</a>.</p>
+
+	</div>
+
+
+
+	<div class="section clearfix">
+	<a name="capabilities"></a>
+
+		<div class="floatRight">
+			<h2 id="clients">Our family of clients</h2>
+			<p class="clientP">We like to think of our clients as family. Here are some of the recent members and some of our closest relatives. You can contact us for a full client list, for references or even just to chat.</p>
+			<div class="clientList">
+				<h3>startcooking.com</h3>
+				<p>Top independently produced cooking content on the net<p></p>
+				<h3>Environmental Defense Fund</h3>
+				<p>America&rsquo;s largest and most important environmental agency</p>
+				<h3>David Maister</h3>
+				<p>Bestselling Author, ex-Harvard Business School professor, top management consultant</p>
+				<h3>Charles H. Green</h3>
+				<p>Huffington post blogger, top advisor, global authority on trust based issues</p>
+				<h3>Duncan Bucknell Company</h3>
+				<p>The authoritative online voice on Intellectual Property Law</p>
+			</div><br/>
+			<p class="clientP">A full client list is available upon request.</p>
+		</div>
+
+		<div class="floatLeft">
+		<h2 id="specialize">We specialize in a lot</h2>
+		<p>While we always love to learn something new (it&rsquo;s how we&rsquo;ve gotten good at so many things), our team&rsquo;s core strengths include:</p>
+		<p>
+			Social Media Marketing<br/>
+			Conversational Marketing<br/>
+			Presentation Design<br/>
+			Audio and Video Production<br/>
+			Online Video Distribution Strategy<br/>
+			Website Design Production and Strategizing<br/>
+			Social Media Branding<br/>
+			Blog Coaching<br/>
+			SEO and Traffic Strategizing</p>
+		<p>All of our sites are built on our proprietary social media content management system, strategically built and regularly updated to exploit the best opportunities presented by today&rsquo;s social media landscape. We&rsquo;re always happy to talk about the advantages it offers our clients, contact us to find out more.</p>
+		</div>
+
+	</div>
+
+
+
+	<a name="contact"></a>
+	<h2 id="contact">Contact us</h2>
+
+	<div class="section cc clearfix">
+
+		<div class="floatRight">
+			<p>You can <span id="mailed855d4f808598553ceceed64e328f26">email us at &#106;&#117;&#115;&#116;&#105;&#110; [at] &#115;&#116;&#114;&#101;&#115;&#115;&#108;&#105;&#109;&#105;&#116;&#100;&#101;&#115;&#105;&#103;&#110; [dot] &#99;&#111;&#109;</span><script language="javascript" type="text/javascript">
+			//<![CDATA[
+			document.getElementById('mailed855d4f808598553ceceed64e328f26').style.display='none';document.write('use this link to <a href="&#109;&#97;&#105;'+'&#108;&#116;&#111;:&#106;&#117;&#115;&#116;&#105;&#110;'+'@'+'&#115;&#116;&#114;&#101;&#115;&#115;&#108;&#105;&#109;&#105;&#116;&#100;&#101;&#115;&#105;&#103;&#110;'+'.'+'&#99;&#111;&#109;">'+'contact us by email'+'</a>');
+			//]]>
+			</script>.<br/>
+			Or you can send us a letter, or visit us in person at:</p>
+			<p class="adresse"><strong>stresslimitdesign</strong><br/>
+			4831 Ste-Catherine East<br/>
+			Montreal, Quebec Canada<br/>
+			H1V 1Z7</p>
+			<p>Most of all, we&rsquo;d love to talk to you. Please call us at 514.256.7400. We look forward to hearing from you.</p>
+		</div>
+
+		<div class="floatLeft">
+		<img src="/assets/legacy/v2/images/SLDVAN300.gif" alt="" />
+		</div>
+
+	</div>
+
+
+
+</div>
+
+</div>
+
+<div class="foot"></div>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-321819-3']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</body>
+</html>
+
